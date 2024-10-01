@@ -44,7 +44,7 @@ class CdkStack(Stack):
                                        # This secret name should be identical
                                        # to the one defined in the Streamlit
                                        # container
-                                       secret_name=Config.SECRETS_MANAGER_ID
+                                    #    secret_name=Config.SECRETS_MANAGER_ID
                                        )
 
 
@@ -101,6 +101,10 @@ class CdkStack(Stack):
             f"{prefix}WebappTaskDef",
             memory_limit_mib=512,
             cpu=256,
+            runtime_platform=ecs.RuntimePlatform(
+                operating_system_family= ecs.OperatingSystemFamily.LINUX,
+                cpu_architecture=ecs.CpuArchitecture.ARM64
+            )
         )
 
         # Build Dockerfile from local folder and push to ECR

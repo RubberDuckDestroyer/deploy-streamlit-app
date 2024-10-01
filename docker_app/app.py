@@ -6,24 +6,24 @@ from utils.llm import Llm
 from config_file import Config
 
 # ID of Secrets Manager containing cognito parameters
-secrets_manager_id = Config.SECRETS_MANAGER_ID
+# secrets_manager_id = Config.SECRETS_MANAGER_ID
 
 # Initialise CognitoAuthenticator
-authenticator = Auth.get_authenticator(secrets_manager_id)
+# authenticator = Auth.get_authenticator(secrets_manager_id)
 
 # Authenticate user, and stop here if not logged in
-is_logged_in = authenticator.login()
-if not is_logged_in:
-    st.stop()
+# is_logged_in = authenticator.login()
+# if not is_logged_in:
+#     st.stop()
 
 
-def logout():
-    authenticator.logout()
+# def logout():
+#     authenticator.logout()
 
 
-with st.sidebar:
-    st.text(f"Welcome,\n{authenticator.get_username()}")
-    st.button("Logout", "logout_btn", on_click=logout)
+# with st.sidebar:
+#     st.text(f"Welcome,\n{authenticator.get_username()}")
+#     st.button("Logout", "logout_btn", on_click=logout)
 
 # Add title on the page
 st.title("Generative AI Application")
