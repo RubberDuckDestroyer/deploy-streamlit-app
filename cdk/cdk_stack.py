@@ -103,7 +103,7 @@ class CdkStack(Stack):
             cpu=256,
             runtime_platform=ecs.RuntimePlatform(
                 operating_system_family= ecs.OperatingSystemFamily.LINUX,
-                cpu_architecture=ecs.CpuArchitecture.ARM64
+                cpu_architecture=ecs.CpuArchitecture.X86_64
             )
         )
 
