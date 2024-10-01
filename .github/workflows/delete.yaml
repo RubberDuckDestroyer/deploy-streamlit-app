@@ -30,6 +30,6 @@ jobs:
         run: cdk synth
 
       - name: CDK Deploy
-        run: cdk destroy
+        run: cdk destroy -f
 
 
